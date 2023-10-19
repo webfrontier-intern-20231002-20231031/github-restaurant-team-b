@@ -35,6 +35,10 @@
 
 ローカルでmainブランチから作業ブランチを作成する
 
+```sh
+$git switch -c <作業ブランチ名>
+```
+
 ブランチ名のルール：
 >**order-[number]-[menu-name]**
 
@@ -50,6 +54,10 @@
 >order-1-potato_salad
 
 リモートリポジトリに作業ブランチをpushする
+
+```sh
+$git push origin <作業ブランチ名>
+```
 
 ## 2.調理する
 コック役が行う作業
@@ -72,6 +80,11 @@
 
 作業ブランチに1つ目のコミットを作成する
 
+```sh
+$git add foodstuff.md
+$git commit -m <コメント>
+```
+
 ### 2-3.dish.mdの表を編集する
 
 調理したメニューの調理数を増やす
@@ -80,9 +93,19 @@
 
 作業ブランチに2つ目のコミットを作成する
 
+
+```sh
+$git add dish.md
+$git commit -m <コメント>
+```
+
 ### 2-5.作業ブランチをリモートリポジトリにpushする
 
 作業ブランチをリモートリポジトリにpushする
+
+```sh
+$git push origin <作業ブランチ名>
+```
 
 ## 3.料理を出す
 コック役が行う作業
@@ -101,12 +124,34 @@
 コック役が行う作業
 
 1. リモートリポジトリの変更をfetchする
+```sh
+$git fetch origin main
+```
 2. ローカルのmainブランチにmergeする
+```sh
+$git switch main
+$git merge origin/main
+```
 3. ローカルのmainブランチからローカルの作業ブランチにmergeする
+```sh
+$git switch <作業ブランチ名>
+$git merge main
+```
 4. コンフリクトを解決する
-5. ローカルの作業ブランチでコミットを作成する
-6. ローカルの作業ブランチをリモートの作業ブランチにpushする
-7. Pull Requestを修正する
+
+```sh
+※コンフリクトした箇所を修正
+
+$git add <修正したファイル>
+$git commit -m <コメント>
+$git push origin　<作業ブランチ名>
+```
+
+5. ローカルの作業ブランチをリモートの作業ブランチにpushする
+```sh
+$git push origin　<作業ブランチ名>
+```
+6. Pull Requestを修正する
 
 ## 4.参考
 
