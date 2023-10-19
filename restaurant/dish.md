@@ -2,7 +2,7 @@
 
 |メニュー|累計の調理数|
 |:--:|:--:|
-|カレー(curry_rice)|0|
+|カレー(curry_rice)|1|
 |牛丼(beef_bowl)　|0|
 |ポテトサラダ(potato_salad)|　1|
 
